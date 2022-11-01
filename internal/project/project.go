@@ -8,6 +8,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/spf13/afero"
 	"path/filepath"
+	"strings"
 )
 
 type Descriptor struct {
@@ -53,18 +54,18 @@ func LoadProject(desc Descriptor, fullLoad bool) (*Project, error) {
 		return nil, errors.Errorf("Shadow dir does not exist at \"%s\"", prj.ShadowDir)
 	}
 
-	if err := prj.attachShadowModules(); err != nil {
+	if err := prj.loadShadowModules(); err != nil {
 		return nil, err
 	}
 
-	if err := prj.attachStandardModules(); err != nil {
+	if err := prj.loadStandardModules(); err != nil {
 		return nil, err
 	}
 
 	return prj, nil
 }
 
-func (prj *Project) attachShadowModules() error {
+func (prj *Project) loadShadowModules() error {
 	paths, _ := filesystem.Glob(prj.Fs, filepath.Join(prj.ProjectDir, common.ShadowDir, "*"))
 	for _, path := range paths {
 		cfgFilePath := filepath.Join(path, common.ShadowFile)
@@ -83,17 +84,39 @@ func (prj *Project) attachShadowModules() error {
 			return errors.Errorf(`Empty YAML file provided at "%s"`, cfgFilePath)
 		}
 
+		preparedLinks := make(config.Links)
+		for from, to := range links {
+			from = filepath.Join(path, from)
+			to = filepath.Join(prj.ProjectDir, to)
+
+			if strings.Contains(from, "*") {
+				matches, _ := filesystem.Glob(prj.Fs, from)
+
+				for _, match := range matches {
+					preparedLinks[match] = filepath.Join(to, filepath.Base(match))
+				}
+
+				continue
+			}
+
+			if exists, _ := filesystem.Exists(prj.Fs, from); !exists {
+				continue
+			}
+
+			preparedLinks[from] = to
+		}
+
 		prj.ShadowModules = append(prj.ShadowModules, &ShadowModule{
 			Name:      filepath.Base(path),
 			ModuleDir: path,
-			Links:     links,
+			Links:     preparedLinks,
 		})
 	}
 
 	return nil
 }
 
-func (prj *Project) attachStandardModules() error {
+func (prj *Project) loadStandardModules() error {
 	paths, _ := filesystem.Glob(prj.Fs, filepath.Join(prj.ProjectDir, "*", "Pyz*", "*", "*"))
 	desc := make(map[string][]string)
 	for _, path := range paths {

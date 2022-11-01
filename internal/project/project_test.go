@@ -60,8 +60,8 @@ func TestLoadProjectWithShadowModuleConfigFile(t *testing.T) {
 	data := `
 from: to
 `
-
 	_ = afero.WriteFile(fs, "/some/path/.shadow/SomeModule/.shadow.yml", []byte(data), 0644)
+	_ = fs.MkdirAll("/some/path/.shadow/SomeModule/from", 0755)
 
 	result, err := LoadProject(Descriptor{Fs: fs, ProjectDir: "/some/path"}, true)
 

@@ -8,7 +8,6 @@ import (
 	"github.com/spf13/afero"
 	"github.com/symfony-cli/console"
 	"path/filepath"
-	"strings"
 )
 
 var (
@@ -65,18 +64,8 @@ func (d *deployCommand) deployAction(ctx *console.Context, prj *project.Project)
 }
 
 func (d *deployCommand) deployModule(prj *project.Project, module *project.ShadowModule, forceMode bool, copyMode bool) (bool, error) {
-	links, err := d.prepareLinks(prj, module)
-
-	if err != nil {
-		return false, err
-	}
-
-	if len(links) == 0 {
-		return false, errors.Errorf(`No valid links found for module "%s"`, module.Name)
-	}
-
 	var deployed bool
-	for from, to := range links {
+	for from, to := range module.Links {
 		applied, err := d.deployLink(prj, forceMode, copyMode, from, to)
 
 		if err != nil {
@@ -89,37 +78,6 @@ func (d *deployCommand) deployModule(prj *project.Project, module *project.Shado
 	}
 
 	return deployed, nil
-}
-
-func (d *deployCommand) prepareLinks(prj *project.Project, module *project.ShadowModule) (map[string]string, error) {
-	links := make(map[string]string)
-
-	for from, to := range module.Links {
-		from = filepath.Join(module.ModuleDir, from)
-		to = filepath.Join(prj.ProjectDir, to)
-
-		if strings.Contains(from, "*") {
-			matches, err := filesystem.Glob(prj.Fs, from)
-
-			if err != nil {
-				return nil, err
-			}
-
-			for _, match := range matches {
-				links[match] = filepath.Join(to, filepath.Base(match))
-			}
-
-			continue
-		}
-
-		if exists, _ := filesystem.Exists(prj.Fs, from); !exists {
-			return nil, errors.Errorf(`File or Directory "%s" does not exist`, from)
-		}
-
-		links[from] = to
-	}
-
-	return links, nil
 }
 
 func (d *deployCommand) deployLink(prj *project.Project, forceMode bool, copyMode bool, from string, to string) (bool, error) {
