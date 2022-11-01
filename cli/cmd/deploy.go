@@ -1,13 +1,13 @@
 package cmd
 
 import (
+	"github.com/andreaspenz/shadow/internal/filesystem"
+	"github.com/andreaspenz/shadow/internal/io"
+	"github.com/andreaspenz/shadow/internal/project"
 	"github.com/pkg/errors"
 	"github.com/spf13/afero"
 	"github.com/symfony-cli/console"
 	"path/filepath"
-	"shadow/internal/filesystem"
-	"shadow/internal/io"
-	"shadow/internal/project"
 	"strings"
 )
 

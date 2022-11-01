@@ -1,11 +1,11 @@
 package cmd
 
 import (
+	"github.com/andreaspenz/shadow/internal/filesystem"
+	"github.com/andreaspenz/shadow/internal/io"
+	"github.com/andreaspenz/shadow/internal/project"
 	"github.com/pkg/errors"
 	"github.com/symfony-cli/console"
-	"shadow/internal/filesystem"
-	"shadow/internal/io"
-	"shadow/internal/project"
 )
 
 type initCommand struct {

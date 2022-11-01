@@ -1,10 +1,10 @@
 package config
 
 import (
+	"github.com/andreaspenz/shadow/internal/filesystem"
 	"github.com/pkg/errors"
 	"github.com/spf13/afero"
 	"gopkg.in/yaml.v3"
-	"shadow/internal/filesystem"
 )
 
 type Links map[string]string

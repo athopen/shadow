@@ -2,8 +2,8 @@ package cli
 
 import (
 	"fmt"
+	"github.com/andreaspenz/shadow/cli/cmd"
 	"github.com/symfony-cli/console"
-	"shadow/cli/cmd"
 	"time"
 )
 

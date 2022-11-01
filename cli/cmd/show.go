@@ -1,11 +1,11 @@
 package cmd
 
 import (
+	"github.com/andreaspenz/shadow/internal/io"
+	"github.com/andreaspenz/shadow/internal/project"
 	"github.com/olekukonko/tablewriter"
 	"github.com/pkg/errors"
 	"github.com/symfony-cli/console"
-	"shadow/internal/io"
-	"shadow/internal/project"
 )
 
 func newShowCommand() *console.Command {

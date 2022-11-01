@@ -1,13 +1,13 @@
 package project
 
 import (
+	"github.com/andreaspenz/shadow/internal/common"
+	"github.com/andreaspenz/shadow/internal/config"
+	"github.com/andreaspenz/shadow/internal/filesystem"
+	"github.com/andreaspenz/shadow/internal/io"
 	"github.com/pkg/errors"
 	"github.com/spf13/afero"
 	"path/filepath"
-	"shadow/internal/common"
-	"shadow/internal/config"
-	"shadow/internal/filesystem"
-	"shadow/internal/io"
 )
 
 type Descriptor struct {

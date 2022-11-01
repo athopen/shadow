@@ -1,13 +1,13 @@
 package cmd
 
 import (
+	"github.com/andreaspenz/shadow/internal/filesystem"
+	"github.com/andreaspenz/shadow/internal/io"
+	"github.com/andreaspenz/shadow/internal/project"
 	"github.com/symfony-cli/console"
 	"io/fs"
 	"os"
 	"path/filepath"
-	"shadow/internal/filesystem"
-	"shadow/internal/io"
-	"shadow/internal/project"
 )
 
 func newCleanCommand() *console.Command {

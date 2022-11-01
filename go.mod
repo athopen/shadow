@@ -1,4 +1,4 @@
-module shadow
+module github.com/andreaspenz/shadow
 
 go 1.19
 

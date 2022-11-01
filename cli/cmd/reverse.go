@@ -1,15 +1,15 @@
 package cmd
 
 import (
+	"github.com/andreaspenz/shadow/internal/common"
+	"github.com/andreaspenz/shadow/internal/config"
+	"github.com/andreaspenz/shadow/internal/filesystem"
+	"github.com/andreaspenz/shadow/internal/io"
+	"github.com/andreaspenz/shadow/internal/project"
 	"github.com/pkg/errors"
 	"github.com/symfony-cli/console"
 	"os"
 	"path/filepath"
-	"shadow/internal/common"
-	"shadow/internal/config"
-	"shadow/internal/filesystem"
-	"shadow/internal/io"
-	"shadow/internal/project"
 	"strings"
 )
 

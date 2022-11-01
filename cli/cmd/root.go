@@ -1,10 +1,10 @@
 package cmd
 
 import (
+	"github.com/andreaspenz/shadow/internal/filesystem"
+	"github.com/andreaspenz/shadow/internal/project"
 	"github.com/symfony-cli/console"
 	"path"
-	"shadow/internal/filesystem"
-	"shadow/internal/project"
 )
 
 var (
