@@ -26,9 +26,6 @@ jobs:
         name: test
         run: go test -v ./...
       -
-        name: setup cosign
-        uses: sigstore/cosign-installer@v2.7.0
-      -
         name: build snapshot
         uses: goreleaser/goreleaser-action@v2
         if: startsWith(github.ref, 'refs/heads/')
