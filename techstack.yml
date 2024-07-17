@@ -1,0 +1,225 @@
+repo_name: spryker-community/shadow
+report_id: a5320f3504d8556879877fd58e6e7a18
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-05T09:11:25+00:00'
+requested_by: gxjansen
+provider: github
+branch: master
+detected_tools_count: 16
+tools:
+- name: Golang
+  description: An open source programming language that makes it easy to build simple,
+    reliable, and efficient software
+  website_url: http://golang.org/
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1005/O6AczwfV_400x400.png
+  detection_source_url: https://github.com/spryker-community/shadow
+  detection_source: Repo Metadata
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/spryker-community/shadow
+  detection_source: Repo Metadata
+- name: GitHub Actions
+  description: Automate your workflow from idea to production
+  website_url: https://github.com/features/actions
+  open_source: false
+  hosted_saas: true
+  category: Build, Test, Deploy
+  sub_category: Continuous Integration
+  image_url: https://img.stackshare.io/service/11563/actions.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/.github/workflows/build.yml
+  detection_source: ".github/workflows/build.yml"
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: Shell
+  description: A shell is a text-based terminal, used for manipulating programs and
+    files. Shell scripts typically manage program execution.
+  website_url: https://en.wikipedia.org/wiki/Shell_script
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/spryker-community/shadow
+  detection_source: Repo Metadata
+- name: afero
+  description: A FileSystem Abstraction System for Go
+  package_url: https://pkg.go.dev/github.com/spf13/afero
+  version: 1.9.2
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: errors
+  description: Simple error handling primitives
+  package_url: https://pkg.go.dev/github.com/pkg/errors
+  version: 0.9.1
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: go-colorable
+  description: Go-colorable Colorable writer for windows
+  package_url: https://pkg.go.dev/github.com/mattn/go-colorable
+  version: 0.1.11
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: go-homedir
+  description: Go library for detecting and expanding the user's home directory without
+    cgo
+  package_url: https://pkg.go.dev/github.com/mitchellh/go-homedir
+  version: 1.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: go-isatty
+  description: Package isatty implements interface to isatty
+  package_url: https://pkg.go.dev/github.com/mattn/go-isatty
+  version: 0.0.14
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: go-runewidth
+  description: Go-runewidth Provides functions to get fixed width of the character
+    or string
+  package_url: https://pkg.go.dev/github.com/mattn/go-runewidth
+  version: 0.0.9
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: kr/text
+  description: Miscellaneous functions for formatting text
+  package_url: https://pkg.go.dev/github.com/kr/text
+  version: 0.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: pretty
+  description: Pretty printing for Go values
+  package_url: https://pkg.go.dev/github.com/kr/pretty
+  version: 0.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: sys
+  description: Go packages for low-level interaction with the operating system
+  package_url: https://pkg.go.dev/golang.org/x/sys
+  version: 0.0.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: tablewriter
+  description: ASCII table in golang
+  package_url: https://pkg.go.dev/github.com/olekukonko/tablewriter
+  version: 0.0.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: text
+  description: Go text processing support
+  package_url: https://pkg.go.dev/golang.org/x/text
+  version: 0.0.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
+- name: zerolog
+  description: Zero Allocation JSON Logger
+  package_url: https://pkg.go.dev/github.com/rs/zerolog
+  version: 1.26.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Go Modules Packages
+  image_url: https://img.stackshare.io/package/go-packages/image.png
+  detection_source_url: https://github.com/spryker-community/shadow/blob/master/go.sum
+  detection_source: go.mod
+  last_updated_by: andreaspenz
+  last_updated_on: 2022-11-01 17:27:34.000000000 Z
